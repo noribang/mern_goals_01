@@ -7,5 +7,6 @@ npm i express dotenv mongoose colors
 npm i -D nodemon
 
 ## Run nodemon
+*Added script in package.json.*
 npm run server
 
