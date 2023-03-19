@@ -8,7 +8,7 @@ const app = express()
 /*READ*/
 app.get('/api/goals', (req, res) => {
     // res.send('Get goals...')
-    res.json({message: 'Get goals...'})
+    res.status(200).json({message: 'Get goals...'})
 })
 
 
