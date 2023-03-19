@@ -7,7 +7,8 @@ const app = express()
 /**CRUD**/
 /*READ*/
 app.get('/api/goals', (req, res) => {
-    res.send('Get goals...')
+    // res.send('Get goals...')
+    res.json({message: 'Get goals...'})
 })
 
 
