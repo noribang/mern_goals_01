@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/noribang/mern_goals_01/issues"
   },
-  "homepage": "https://github.com/noribang/mern_goals_01#readme"
+  "homepage": "https://github.com/noribang/mern_goals_01#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  }
 }
