@@ -1,14 +1,14 @@
 // @desc    Get goals
 // @route   GET /api/goals
 // @access  Private
-const getGoals = (req, res) => {
+const getGoals = async (req, res) => {
     res.status(200).json({ message: 'Get goals...aaaa' })
 }
 
 // @desc    Set goal
 // @route   POST /api/goals
 // @access  Private
-const setGoal = (req, res) => {
+const setGoal = async (req, res) => {
     console.log(req.body.text)
     // Error handling
     // If request body text does not exist
@@ -25,14 +25,14 @@ const setGoal = (req, res) => {
 // @desc    Update goal
 // @route   UPDATE /api/goals/:id
 // @access  Private
-const updateGoal = (req, res) => {
+const updateGoal = async (req, res) => {
     res.status(200).json({message: `Update goal ${req.params.id}`})
 }
 
 // @desc    Delete goal
 // @route   DELETE /api/goals/:id
 // @access  Private
-const deleteGoal = (req, res) => {
+const deleteGoal = async (req, res) => {
     res.status(200).json({message: `Delete goal ${req.params.id}`})
 }
 

@@ -10,3 +10,5 @@ npm i -D nodemon
 *Added script in package.json.*
 npm run server
 
+## Install async-handler
+npm i express-async-handler
