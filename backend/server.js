@@ -1,15 +1,13 @@
+// Import library
 const express = require('express')
 const dotenv = require('dotenv').config()
+// Assign port
 const port = process.env.PORT || 8000
 // Create express instance.
 const app = express()
 
-/**CRUD**/
-/*READ*/
-app.get('/api/goals', (req, res) => {
-    // res.send('Get goals...')
-    res.status(200).json({message: 'Get goals...'})
-})
+// Middleware.          
+app.use('/api/goals', require('./routes/goalRoutes'))
 
 
 // Listen for requests.
