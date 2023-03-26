@@ -6,6 +6,10 @@ const port = process.env.PORT || 8000
 // Create express instance.
 const app = express()
 
+// Middleware. Working with request body data
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 // Middleware.          
 app.use('/api/goals', require('./routes/goalRoutes'))
 
