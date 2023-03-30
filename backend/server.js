@@ -1,5 +1,7 @@
-// Import library
+// Import express server library.
 const express = require('express')
+// Import colors package.
+const colors = require('colors')
 const dotenv = require('dotenv').config()
 // Import middleware errorhandler.
 const {errorHandler} = require('./middleware/errorMiddleware')
