@@ -5,8 +5,14 @@ const colors = require('colors')
 const dotenv = require('dotenv').config()
 // Import middleware errorhandler.
 const {errorHandler} = require('./middleware/errorMiddleware')
+// Import connectDB.
+const connectDB = require('./config/db')
 // Assign port
 const port = process.env.PORT || 8000
+
+// Connect to db.
+connectDB()
+
 // Create express instance.
 const app = express()
 
