@@ -35,19 +35,29 @@ const setGoal = asyncHandler( async (req, res) => {
     const goal = await Goal.create({
         text: req.body.text,
     })
-
-    // res.status(200).json({message: 'Set goal...xxxxxxxx'})
-
     // Response from model.
+    // res.status(200).json({message: 'Set goal...xxxxxxxx'})
     res.status(200).json(goal)
-
 })
 
 // @desc    Update goal
 // @route   UPDATE /api/goals/:id
 // @access  Private
 const updateGoal = asyncHandler(async (req, res) => {
-    res.status(200).json({message: `Update goal ${req.params.id}`})
+    // Response from model.
+    const goal = await Goal.findById(req.params.id)
+
+    if (!goal) {
+        res.status(400)
+        throw new Error('Goal not found')
+    }
+
+    const updatedGoal = await Goal.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+    })
+    // Resonse from model.
+    // res.status(200).json({message: `Update goal ${req.params.id}`})
+    res.status(200).json(updatedGoal)
 })
 
 // @desc    Delete goal
