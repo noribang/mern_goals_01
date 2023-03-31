@@ -2,6 +2,7 @@
 const express = require('express')
 // Import colors package.
 const colors = require('colors')
+// Import dotenv. For environment variables.
 const dotenv = require('dotenv').config()
 // Import middleware errorhandler.
 const {errorHandler} = require('./middleware/errorMiddleware')
