@@ -55,7 +55,7 @@ const updateGoal = asyncHandler(async (req, res) => {
     const updatedGoal = await Goal.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
     })
-    // Resonse from model.
+    // Response from model.
     // res.status(200).json({message: `Update goal ${req.params.id}`})
     res.status(200).json(updatedGoal)
 })
@@ -64,7 +64,20 @@ const updateGoal = asyncHandler(async (req, res) => {
 // @route   DELETE /api/goals/:id
 // @access  Private
 const deleteGoal = asyncHandler(async (req, res) => {
-    res.status(200).json({message: `Delete goal ${req.params.id}`})
+    // Response from model.
+    const goal = await Goal.findById(req.params.id)
+
+    if (!goal) {
+        res.status(400)
+        throw new Error('Goal not found')
+    }
+
+    // await goal.remove()
+    await Goal.findByIdAndRemove(req.params.id)
+
+    // Response from model.
+    // res.status(200).json({message: `Delete goal ${req.params.id}`})
+    res.status(200).json({id: req.params.id})
 })
 
 module.exports = {
